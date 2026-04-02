@@ -1,0 +1,290 @@
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #62666d;
+  --accent: #2f6df6;
+  --line: #e8ebf0;
+  --card-shadow: 0 18px 45px -28px rgba(17, 17, 17, 0.25);
+  --radius: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  text-rendering: geometricPrecision;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin-inline: auto;
+}
+
+.section {
+  padding: 6.5rem 0;
+  border-bottom: 1px solid #f4f6f8;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0 0 1rem;
+}
+
+h1 {
+  font-size: clamp(2.3rem, 6.2vw, 4.6rem);
+  max-width: 12ch;
+}
+
+h2 {
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+p,
+li {
+  color: var(--muted);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.86);
+  border-bottom: 1px solid rgba(232, 235, 240, 0.95);
+  backdrop-filter: saturate(160%) blur(14px);
+  z-index: 50;
+}
+
+.nav-wrap {
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+  font-weight: 500;
+  color: #32353a;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.78rem 1.3rem;
+  font-weight: 600;
+  transition: transform 220ms ease, box-shadow 220ms ease, opacity 220ms ease;
+  box-shadow: 0 13px 24px -18px rgba(47, 109, 246, 0.9);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 30px -18px rgba(47, 109, 246, 1);
+}
+
+.btn-small {
+  padding: 0.6rem 1rem;
+  font-size: 0.92rem;
+}
+
+.hero {
+  padding-top: 8rem;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.eyebrow {
+  font-size: 0.86rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #657082;
+  margin-bottom: 1.2rem;
+}
+
+.hero-subtext {
+  max-width: 56ch;
+  font-size: 1.12rem;
+  margin-bottom: 2.2rem;
+}
+
+.feature-grid,
+.service-grid,
+.team-grid,
+.schedule-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.feature-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.service-grid,
+.schedule-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.team-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.feature-card,
+.service-card,
+.team-card,
+.schedule-card,
+.embed-shell,
+.integration-guide {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  background: #fff;
+  box-shadow: var(--card-shadow);
+}
+
+.price {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.approach-steps {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding-left: 1.3rem;
+}
+
+.approach-steps li {
+  border-bottom: 1px solid #f1f3f6;
+  padding-bottom: 0.85rem;
+}
+
+.avatar {
+  width: 56px;
+  aspect-ratio: 1;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg, #e8f0ff, #f8fbff);
+  color: #20429e;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.team-card a {
+  margin-top: 0.8rem;
+  display: inline-block;
+  color: #1a55d2;
+  font-weight: 600;
+}
+
+.contact-intro {
+  max-width: 64ch;
+  margin-top: -0.5rem;
+}
+
+.contact-actions {
+  margin: 1.2rem 0 1.4rem;
+}
+
+.embed-shell {
+  padding: 0;
+  overflow: hidden;
+  min-height: 520px;
+}
+
+.embed-shell iframe {
+  width: 100%;
+  min-height: 520px;
+  border: none;
+}
+
+.integration-guide {
+  margin-top: 1rem;
+}
+
+.muted {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.site-footer {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 980px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-grid,
+  .service-grid,
+  .schedule-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .nav-links {
+    display: none;
+  }
+
+  .section {
+    padding: 4.5rem 0;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 5.5rem;
+  }
+}
