@@ -2,6 +2,7 @@
 
 Production-ready, premium, conversion-focused website for **DDA Tutoring**.
 
+<<<<<<< codex/design-and-build-dda-tutoring-website-1n7e22
 ## Render Deployment (dashboard.render.com)
 
 This project is now set up to work directly from the Render dashboard at:
@@ -35,6 +36,9 @@ You can deploy **either way**:
 ---
 
 ## Local Development
+=======
+## 1) Local Development Setup
+>>>>>>> main
 
 ```bash
 python -m venv .venv
@@ -46,7 +50,11 @@ python manage.py runserver
 
 Open: `http://127.0.0.1:8000/`
 
+<<<<<<< codex/design-and-build-dda-tutoring-website-1n7e22
 ## Google Forms Integration
+=======
+## 2) Google Forms Integration
+>>>>>>> main
 
 The site intentionally uses Google Forms (no backend form handling required).
 
@@ -71,24 +79,71 @@ The site intentionally uses Google Forms (no backend form handling required).
    - `google_embed_url`
 5. In Google Forms, open **Responses** → **Link to Sheets** to automatically send responses to Google Sheets.
 
+<<<<<<< codex/design-and-build-dda-tutoring-website-1n7e22
 ## Static Files
+=======
+## 3) Static Files
+
+Static files are served with WhiteNoise.
+>>>>>>> main
 
 ```bash
 python manage.py collectstatic
 ```
 
+<<<<<<< codex/design-and-build-dda-tutoring-website-1n7e22
 ## Project Structure
 
 ```text
 .
 ├── Procfile
 ├── build.sh
+=======
+## 4) Deployment (Render / Railway)
+
+### Environment variables
+- `DJANGO_SECRET_KEY` = secure random value
+- `DEBUG` = `False`
+- `ALLOWED_HOSTS` = your deployed domain(s), comma-separated
+
+### Render
+1. Create a new web service from this repo.
+2. Build command:
+   ```bash
+   pip install -r requirements.txt && python manage.py collectstatic --noinput
+   ```
+3. Start command:
+   ```bash
+   gunicorn dda_tutoring.wsgi:application
+   ```
+4. Add environment variables above.
+
+### Railway
+1. Create new project from this repo.
+2. Set start command:
+   ```bash
+   gunicorn dda_tutoring.wsgi:application
+   ```
+3. Configure the same environment variables.
+4. Add optional deploy step for static files:
+   ```bash
+   python manage.py collectstatic --noinput
+   ```
+
+## 5) Project Structure
+
+```text
+.
+>>>>>>> main
 ├── dda_tutoring/
 │   ├── asgi.py
 │   ├── settings.py
 │   ├── urls.py
 │   └── wsgi.py
+<<<<<<< codex/design-and-build-dda-tutoring-website-1n7e22
 ├── render.yaml
+=======
+>>>>>>> main
 ├── tutoring_site/
 │   ├── static/tutoring_site/
 │   │   ├── scripts.js
